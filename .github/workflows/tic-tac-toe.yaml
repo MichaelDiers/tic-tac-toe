@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
-    uses: MichaelDiers/shared-workflows/.github/workflows/C:\work\repos\shared-workflows\.github\workflows\react-on-ghpages.yaml@main
+    uses: MichaelDiers/shared-workflows/.github/workflows/react-on-ghpages.yaml@main
     with:
       github-repository: ${GITHUB_REPOSITORY}
       working-directory: tictactoe
