@@ -5,22 +5,10 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  main:
-    defaults:
-      run:
-        working-directory: tictactoe
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: install dependencies
-        run: npm install
-      - name: install gh-pages
-        run: npm install gh-pages
-      - name: build
-        run: npm run build
-      - name: Deploy with gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
+    uses: MichaelDiers/shared-workflows/.github/workflows/C:\work\repos\shared-workflows\.github\workflows\react-on-ghpages.yaml@main
+    with:
+      github-repository: ${GITHUB_REPOSITORY}
+      working-directory: tictactoe
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
