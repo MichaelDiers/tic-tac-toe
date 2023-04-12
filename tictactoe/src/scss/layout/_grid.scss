@@ -1,0 +1,6 @@
+.gameboard-entries {
+  display: grid;
+  grid-template-columns: repeat(3, min(20vh, 20vw));
+  grid-template-rows: repeat(3, min(20vh, 20vw));
+  gap: min(10vh, 10vw);
+}
